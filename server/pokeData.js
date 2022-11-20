@@ -60,13 +60,13 @@ const users = [
     {
         id: 1,
         name: 'Ash',
-        pokemon: [1, 2, 3, 4, 5],
-        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
+        pokemonIds: [1, 2, 3, 4, 5],
+        image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'
     },
     {
         id: 2,
         name: 'Misty',
-        pokemon: [1, 2, 3, 4, 5],
+        pokemonIds: [1, 2, 4],
         image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png',
     },
 ]

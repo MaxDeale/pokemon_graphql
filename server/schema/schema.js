@@ -7,8 +7,6 @@ const {
     GraphQLString,
     GraphQLSchema,
     GraphQLList,
-    GraphQLNonNull,
-    GraphQLEnumType,
 } = require('graphql');
 
 // Create types
@@ -32,7 +30,12 @@ const UserType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
-        pokemon: { type: new GraphQLList(PokemonType) },
+        pokemons: {
+            type: new GraphQLList(PokemonType),
+            resolve(parent, args) {
+                return pokemon.filter(poke => parent.pokemonIds.includes(poke.id));
+            },
+        },
         image: { type: GraphQLString },
     })
 })
